@@ -27,3 +27,5 @@ puts 'Address Book created'
 
  end
 
+ AddressBook.join(:entry)
+ 
