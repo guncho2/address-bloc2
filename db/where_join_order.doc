@@ -1,0 +1,766 @@
+terminal
+
+sqlite> SELECT department.department_name, AVG(compensation.vacation_days) FROM department JOIN professor ON 
+department.id = professor.department_id JOIN compensation ON professor.id = compensation.professor_id GROUP
+ by department.department_name;
+Care of Magical Creatures,13.0
+Defence Against the Dark Arts,9.0
+Study of Ancient Runes,8.0
+
+
+
+seed.rb
+
+puts Entry.order(:name, phone_number: :desc)
+
+puts Entry.order(name: :asc, phone_number: :desc)
+
+
+puts Entry.order("name ASC", "phone_number DESC")
+
+puts Entry.order("name ASC, phone_number DESC")
+
+
+ AddressBook.join(:entry)
+
+terminal
+
+eduardos-MBP:address-bloc2 eduardolowensohn$ bundle exec ruby db/seed.rb
+Address Book created
+Entry created
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+name,phone_number desc
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+name asc,phone_number desc
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+name ASC,phone_number DESC
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+name ASC, phone_number DESC
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Eduardo
+Phone Number: 305-990-2218
+Email: eduardo@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo One
+Phone Number: 999-999-9999
+Email: foo_one@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Three
+Phone Number: 222-222-2222
+Email: foo_three@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com
+Name: Foo Two
+Phone Number: 111-111-1111
+Email: foo_two@gmail.com

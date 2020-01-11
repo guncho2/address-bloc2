@@ -13,19 +13,28 @@ puts 'Address Book created'
  puts Entry.create(address_book_id: book.id, name: 'Foo Three', phone_number: '222-222-2222', email: 'foo_three@gmail.com' )
  puts Entry.create(address_book_id: book.id, name: 'Eduardo', phone_number: '305-990-2218', email: 'eduardo@gmail.com' )
 
- puts Entry.find_by('name', 'Foo One')
- puts Entry.find_by('name', 'Foo Three')
- puts Entry.find_by('name', 'Eduardo')
+#  puts Entry.find_by('name', 'Foo One')
+#  puts Entry.find_by('name', 'Foo Three')
+#  puts Entry.find_by('name', 'Eduardo')
 
- Entry.find_each(start: 3, batch_size: 5) do |row|
-        puts row
+#  Entry.find_each(start: 3, batch_size: 5) do |row|
+#         puts row
 
- end
+#  end
  
- Entry.find_in_batches(start: 2, batch_size: 5) do |contacts|
-        contacts.each { |contact| puts contact }
+#  Entry.find_in_batches(start: 2, batch_size: 5) do |contacts|
+#         contacts.each { |contact| puts contact }
 
- end
+#  end
+
+
+puts Entry.order(:name, phone_number: :desc)
+puts Entry.order(name: :asc, phone_number: :desc)
+
+
+puts Entry.order("name ASC", "phone_number DESC")
+
+puts Entry.order("name ASC, phone_number DESC")
+
 
  AddressBook.join(:entry)
- 
