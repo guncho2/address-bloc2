@@ -1,6 +1,9 @@
 require 'bloc_record/base'
  class Entry < BlocRecord::Base
 
+  belongs_to :address_book
+  
+
 
 
 
