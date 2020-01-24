@@ -184,7 +184,6 @@ class MenuController
     # entry.phone_number = phone_number if !phone_number.empty?
     # entry.email = email if !email.empty?
     updates[:email] = email unless email.empty?
-
     entry.update_attributes(updates)
     system "clear"
     puts "Updated entry:"

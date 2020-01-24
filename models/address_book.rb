@@ -5,7 +5,6 @@ require 'bloc_record/base'
 
 class AddressBook < BlocRecord::Base
   # attr_reader :entries
-  
 
   def initialize(options={})
     super
