@@ -55,8 +55,49 @@ puts Entry.order("name ASC")
 # puts Entry.all
 
 # people = Entry.all
-puts Entry.where(phone_number: '999-999-9999')
-puts Entry.take(name: "Foo One")
+
+# puts Entry.take(name: "Foo One")
+
+
+#  all_the_updates works
+ 
+
+
+
+
+#  people = Entry.all
+# puts Entry.all
+ 
+
+#  people.update(name: "Dave", email: "david@bloc.com", phone_number: "111-111-1111", name: "Jaun", email: "juan@bloc.com", phone_number: "111-111-1111" )
+
+# puts Entry.all
+
+# people = Entry.all
+puts Entry.where(phone_number: '999-999-9999') 
+# where works
+
+puts people.not(phone_number: '999-999-9999')
+# not is the only one not working with an error in a database : SQL /Users/eduardolowensohn/.rvm/gems/ruby-2.5.1/gems/sqlite3-1.4.1/lib/sqlite3/database.rb:147:in `initialize': near ";": syntax error (SQLite3::SQLException)
+
+# puts Entry.take(name: "Foo One")
+puts Entry.take(name: 'Dave')
+
+# take fixed both take and take_one in  case  is string 
+
+
+
+
+
+# Entry.where(name: "Dave")
+
+# Entry.not(name: "Dave")
+
+
+
+
+
+all_the_updates.not(name: "Dave")
 
 
 
