@@ -108,6 +108,11 @@ all_the_updates.not(name: "Dave")
 
 
 
+Entry.destroy_all(["phone_number = ?", '111-111-1111'])
+
+Entry.where(name: "Juan").destroy_all
+
+puts Entry.all
 
 
 # all_the_updates.not(name: "Dave")
