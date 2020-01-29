@@ -48,6 +48,9 @@ puts 'Address Book created'
 #   people =  Entry.update(all_the_updates.keys, all_the_updates.values)
 # puts Entry.order("name ASC")
 
+# DESTROY CHAPTER #
+
+
 
 Entry.destroy_all("name = 'Foo One'")
 Entry.destroy_all("phone_number = '305-990-2218'")
