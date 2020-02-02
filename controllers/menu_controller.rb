@@ -81,6 +81,7 @@ class MenuController
     @address_book.entries.each do |entry|
       Entry.order.(name: :ASC).each do |entry|
       system "clear"
+      puts "Address Book: #{entry.address_book.name} Entry"
       puts entry.to_s
       entry_submenu(entry)
     end
